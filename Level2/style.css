@@ -1,0 +1,103 @@
+body {
+  background-color: #c3cfe2;
+}
+
+.portfolio {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+  display: -ms-grid;
+  display: grid;
+}
+
+.card {
+  text-align: center;
+  width: 300px;
+  margin: 10px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), color-stop(61%, #fff), color-stop(61%, #686de0), to(#686de0));
+  background: linear-gradient(to bottom, #fff 0%, #fff 61%, #686de0 61%, #686de0 100%);
+  border-radius: 8%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  position: relative;
+  -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+          box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+}
+
+.card__text {
+  padding: 25px;
+  padding: 25px 25px 0px 25px;
+  font-size: 15px;
+  color: #504e4e;
+  text-align: left;
+}
+
+.card__img {
+  height: 100px;
+  border-radius: 50%;
+  border: 5px solid white;
+}
+
+.card__name {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 200;
+}
+
+.card__url {
+  font-weight: 100;
+  color: #b3b1b1;
+}
+
+.card__button {
+  display: none;
+  width: 100px;
+  top: 50%;
+  left: 33%;
+  z-index: 1;
+  position: absolute;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  border-radius: 8%;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  background-color: #332d2d;
+  -webkit-transition: opacity 250ms;
+  transition: opacity 250ms;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card:hover .card__button {
+  display: inline-block;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .portfolio {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .portfolio {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+/*# sourceMappingURL=style.css.map */

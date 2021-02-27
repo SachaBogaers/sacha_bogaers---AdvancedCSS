@@ -1,0 +1,102 @@
+$page-background-color: #c3cfe2;
+$footer-color: #686de0;
+$card-background-color: #fff;
+
+body {
+	background-color: $page-background-color;
+}
+
+.portfolio {
+	justify-content: center;
+	font-family: Arial, Helvetica, sans-serif;
+	display: grid;
+}
+
+
+
+.card {
+	text-align: center;
+	width: 300px;
+	margin: 10px;
+	background: linear-gradient(to bottom, $card-background-color 0%, $card-background-color 61%, $footer-color 61%, $footer-color 100%);
+	border-radius: 8%;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr;
+	position: relative;
+	box-shadow:
+	0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+	0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+	0 12.5px 10px rgba(0, 0, 0, 0.06),
+	0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+	0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+	0 100px 80px rgba(0, 0, 0, 0.12);
+
+	&__text {
+		padding: 25px;
+		padding: 25px 25px 0px 25px;
+		font-size: 15px;
+		color: rgb(80, 78, 78);
+		text-align: left;
+	}
+	&__img {
+		height: 100px;
+		border-radius: 50%;
+		border: 5px solid white;
+	}
+	&__name {
+		color: white;
+		text-transform: uppercase;
+		font-weight: 200;
+
+	}
+
+	&__url {
+		font-weight: 100;
+		color: rgb(179, 177, 177);
+	}
+	&__button {
+		display: none;
+		width: 100px;
+		top: 50%;
+		left: 33%;
+		z-index: 1;
+		position: absolute;
+	}
+	&::before {
+		content: "";
+		position: absolute;
+		border-radius: 8%;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		opacity: 0;
+		background-color: rgb(51, 45, 45);
+		transition: opacity 250ms;
+	}
+	&:hover::before {
+		opacity: 1;
+	}
+	&:hover {
+		.card__button{
+			display: inline-block;
+			cursor: pointer;
+		}
+
+	}
+}
+
+@media (min-width: 768px) {
+	.portfolio {
+		grid-template-columns: repeat(2, 1fr);
+		grid-gap: 20px;
+}
+}
+
+@media (min-width: 1024px) {
+	.portfolio {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+}

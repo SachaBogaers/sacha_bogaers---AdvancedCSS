@@ -1,0 +1,93 @@
+$background-color: lightgrey;
+$social-media-height: 28px;
+$blog-color: #e17b77;
+$twitter-color: #00aced;
+$linkedin-color: #007bb6;
+$facebook-color: #3b5998;
+$github-color: #333;
+
+body {
+	margin: 0;
+	background-color: $background-color;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	overflow: hidden;
+	margin-top: 10em;
+}
+
+.social-media {
+	position: relative;
+	height: $social-media-height;
+	width: 12em;
+	transition: left 500ms ease-in;
+	left: 9.5em;
+	overflow: hidden;
+	&__link {
+		width: 12em;
+		position: absolute;
+		color: white;
+		padding: 5px;
+		text-decoration: none;
+	}
+	&:hover {
+		left: 0px;
+	}
+
+	&__link::before {
+		display: inline-block;
+		font-style: normal;
+		font-variant: normal;
+		text-rendering: auto;
+		-webkit-font-smoothing: antialiased;
+		font-family: "Font Awesome 5 Brands"; 
+		width: 2em;
+		padding: 0px 5px 0px 5px;
+	}
+	&__text {
+		text-decoration: underline;
+		font-size: 12px;
+	}
+}
+
+.social-media__link.blog {
+	background-color: $blog-color;
+	&::before {
+		font-family: "Font Awesome 5 Free";
+		font-weight: 900;
+		content: "\f5fc";
+	}
+}
+
+.social-media__link.twitter {
+	background-color: $twitter-color;
+	&::before {
+		content: "\f099";
+	}
+}
+
+.social-media__link.linkedin {
+	background-color: $linkedin-color;
+	&::before {
+		content: "\f0e1";
+	}
+}
+
+.social-media__link.facebook {
+	background-color: $facebook-color;
+	&::before {
+		content: "\f39e";
+		padding: 0px 3px 0px 7px;
+	}
+}
+
+.social-media__link.github {
+	background-color: $github-color;
+	&::before {
+		content: "\f092";
+	}
+}
+
